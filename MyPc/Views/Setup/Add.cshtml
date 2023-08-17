@@ -1,0 +1,55 @@
+﻿@model SetupModel;
+
+<div class="text-center">      
+    <h1 class="display-4 ">Adicionar um novo Setup</h1>
+    <br/>
+</div>
+
+<form asp-controller="Setup" asp-action="Add" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Processador:</label>
+    <input type="text" class="form-control" placeholder="Escreva o processador" asp-for="Cpu">
+   
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Placa Mãe:</label>
+    <input type="text" class="form-control" placeholder="Escreva a Placa Mãe" asp-for="Motherboard">
+    
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Placa de Video:</label>
+    <input type="text" class="form-control" placeholder="Escreva a sua Placa de Video" asp-for="Gpu">
+  </div>
+  <br />
+    <div class="form-group">
+    <label for="exampleInputEmail1">Memória Ram:</label>
+    <input type="text" class="form-control" placeholder="Escreva a memória Ram" asp-for="RAM">
+  </div>
+  <br />  
+  <div class="form-group">
+    <label for="exampleInputEmail1">SSD ou HD:</label>
+    <input type="text" class="form-control" placeholder="Escreva o seu SSD ou HD" asp-for="SSD_or_HD">
+  </div>
+  <br />
+    <div class="form-group">
+    <label for="exampleInputEmail1">Fonte de alimentação:</label>
+    <input type="text" class="form-control" placeholder="Escreva a Fonte de Alimentação" asp-for="PowerSupply">
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Gabinete:</label>
+    <input type="text" class="form-control" placeholder="Escreva seu Gabinete" asp-for="Cabinet">
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Preço Total:</label>
+    <input type="number" class="form-control" placeholder="Escreva o Preço Total" asp-for="TotalPrice">
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary ">Criar</button>
+  <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+
+
+</form>

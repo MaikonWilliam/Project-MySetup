@@ -1,0 +1,53 @@
+﻿@model List<SetupModel>;
+
+<h1> Aqui mostrará meus pcs cadastrados</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].Cpu)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].Motherboard)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].Gpu)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].RAM)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].SSD_or_HD)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].PowerSupply)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model[0].Cabinet)</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+   @if(Model!= null && Model.Any())
+    {
+        
+        foreach(SetupModel Setup in Model)
+        {
+        <tr>  
+           <th scope="row">@Setup.Id</th>
+           <td>@Setup.Cpu</td>
+           <td>@Setup.Motherboard</td>
+           @if(Setup.Gpu == null)
+           {
+              <td>Sem Placa de Video</td>
+           }
+           else
+           {
+              <td>@Setup.Gpu</td>        
+           }
+           <td>@Setup.RAM</td>   
+           <td>@Setup.SSD_or_HD</td>
+           <td>@Setup.PowerSupply</td>
+           <td>@Setup.Cabinet</td>
+           <td>
+           <div class="btn-group" role="group">
+              <a role="button" class="btn btn-primary" asp-action="Details" asp-route-id= "@Setup.Id">Detalhes</a>
+              <a role="button" class="btn btn-danger" asp-action="ApagarConfirmacao" asp-route-id = "@Setup.Id">Apagar</a>        
+           </div>
+           <td>
+         </tr>     
+        }
+    }
+     
+  </tbody>
+</table>
