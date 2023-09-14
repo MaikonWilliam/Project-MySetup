@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyPc.Models;
 using MyPc.Repository;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyPc.Controllers
 {
@@ -34,6 +35,31 @@ namespace MyPc.Controllers
         {
            var obj = _setupRepository.Details(id);
            return View(obj);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var obj = _setupRepository.Details(id);
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult Edit(SetupModel model)
+        {
+             _setupRepository.Edit(model);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ConfirmDelete(int id)
+        {
+            var DeletionSetup =_setupRepository.Details(id);           
+            return View(DeletionSetup);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var model = _setupRepository.Details(id);
+            bool state = _setupRepository.Delete(model);
+            return RedirectToAction("Index");
         }
     }
 }

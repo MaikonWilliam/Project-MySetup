@@ -7,6 +7,11 @@
 
 <form asp-controller="Setup" asp-action="Add" method="post">
   <div class="form-group">
+     <label for="exampleInputEmail1">Nome do Setup:</label>
+     <input type="text" class="form-control" placeholder="Escreva o nome do Setup" asp-for="NameSetup">
+
+  </div>
+  <div class="form-group">
     <label for="exampleInputEmail1">Processador:</label>
     <input type="text" class="form-control" placeholder="Escreva o processador" asp-for="Cpu">
    

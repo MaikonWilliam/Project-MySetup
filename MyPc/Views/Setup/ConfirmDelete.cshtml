@@ -1,0 +1,9 @@
+﻿@model SetupModel;
+   
+<div class="text-center">
+    <h1> Deseja mesmo deletar o Setup : "@Model.NameSetup" ?</h1>     
+</div>
+<div>
+    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Deletar</a>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>

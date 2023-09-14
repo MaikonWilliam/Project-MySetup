@@ -6,11 +6,14 @@
    @if(Model!= null)
     {
         <ul class="list-group">
+            <li class="list-group-item">@Model.NameSetup</li>
             <li class="list-group-item" >@Model.Cpu</li>
             <li class="list-group-item">@Model.Gpu</li>
             <li class="list-group-item">@Model.Motherboard</li>
             <li class="list-group-item">@Model.RAM</li>
-             <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">@Model.Cabinet</li>
+            <li class="list-group-item">@Model.TotalPrice</li>
+
         </ul>
         
     }

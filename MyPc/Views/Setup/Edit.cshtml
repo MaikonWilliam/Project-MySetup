@@ -1,0 +1,63 @@
+﻿@model SetupModel;
+    
+<div class="text-center">      
+    <h1 class="display-4 ">Adicionar um novo Setup</h1>
+    <br/>
+</div>
+
+<form asp-controller="Setup" asp-action="Edit" method="post">
+  <input type="hidden" asp-for=Id/>
+  <div class="form-group">
+     
+    <label for="exampleInputEmail1">Processador:</label>
+    <input type="text" class="form-control" placeholder="@Model.Gpu" asp-for="Cpu">
+   
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Placa Mãe:</label>
+    <input type="text" class="form-control" placeholder="@Model.Motherboard" asp-for="Motherboard">
+    
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Placa de Video:</label>
+    <input type="text" class="form-control" placeholder="@Model.Gpu" asp-for="Gpu">
+  </div>
+  <br />
+    <div class="form-group">
+    <label for="exampleInputEmail1">Memória Ram:</label>
+    <input type="text" class="form-control" placeholder="@Model.RAM" asp-for="RAM">
+  </div>
+  <br />  
+  <div class="form-group">
+    <label for="exampleInputEmail1">SSD ou HD:</label>
+    <input type="text" class="form-control" placeholder="@Model.SSD_or_HD" asp-for="SSD_or_HD">
+  </div>
+  <br />
+    <div class="form-group">
+    <label for="exampleInputEmail1">Fonte de alimentação:</label>
+    <input type="text" class="form-control" placeholder="@Model.PowerSupply" asp-for="PowerSupply">
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Gabinete:</label>
+    <input type="text" class="form-control" placeholder="@Model.Cabinet" asp-for="Cabinet">
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Preço Total:</label>
+    <input type="number" class="form-control" placeholder="@Model.TotalPrice" asp-for="TotalPrice">
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary ">Editar</button>
+  <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+
+
+</form>
+
+<style> 
+    footer{
+        background-color:black
+    }
+</style>
