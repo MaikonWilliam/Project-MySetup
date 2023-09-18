@@ -1,0 +1,52 @@
+﻿@using MyPc.Enums;
+@model UserModel;
+
+<div class="text-center">
+    <h1 class="display-4 ">Adicionar um novo Usuario</h1>
+    <br />
+</div>
+
+<form asp-controller="User" asp-action="Add" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Insira seu nome:</label>
+        <input type="text" class="form-control" placeholder="Escreva o Nome" asp-for="Name">
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="exampleInputEmail1">Insira seu Email:</label>
+        <input type="email" class="form-control" placeholder="Escreva o Email" asp-for="Email">
+        @Html.ValidationMessageFor(x => x.Email)
+
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="exampleInputEmail1">Insira seu Usuario de Login:</label>
+        <input type="text" class="form-control" placeholder="Escreva Login" asp-for="Login">
+        @Html.ValidationMessageFor(x => x.Login)
+
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="exampleInputEmail1">Insira sua senha</label>
+        <input type="password" class="form-control" placeholder="Senha com mais de 8 digitos" asp-for="Passaword">
+        @Html.ValidationMessageFor(x => x.Passaword)
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Selecione o tipo de Usuário:</label>
+        <select class="form-control" Asp-for="Perfil">
+            <option value="0">Selecione</option>
+            <option value=@PerfilEnum.Admin>Administrador </option>
+            <option value=@PerfilEnum.User>Padrão </option>
+        </select>
+    </div>
+
+    <br />
+
+    <br />
+    <button type="submit" class="btn btn-primary ">Criar</button>
+    <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+
+
+</form>

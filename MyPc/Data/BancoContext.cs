@@ -12,6 +12,7 @@ namespace MyPc.Data
         { 
         }
         public DbSet<SetupModel> Setup { get; set; }
+        public DbSet<UserModel> User { get; set; }
 
 
     }

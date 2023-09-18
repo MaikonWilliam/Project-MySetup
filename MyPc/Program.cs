@@ -16,6 +16,7 @@ namespace MyPc
                 .AddDbContext<BancoContext>
                 (o => o.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
             builder.Services.AddScoped<ISetupRepository,SetupRepository>();
+            builder.Services.AddScoped<IUserRepository,UserRepository>();
 
 
             var app = builder.Build();
